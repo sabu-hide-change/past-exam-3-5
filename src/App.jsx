@@ -1946,13 +1946,13 @@ export default function App() {
                     <table className="table-fixed w-full text-xs text-center border-collapse border border-slate-800">
                       <thead>
                         <tr className="bg-slate-950">
-                          <th className="border border-slate-800 p-2 font-bold text-slate-400 relative w-[15%] h-12">
+                          <th className="border border-slate-800 relative w-[15%] h-14 bg-slate-950/80">
                             {/* 斜め線入りセル */}
-                            <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-                              <line x1="0" y1="0" x2="100" y2="100" stroke="#1e293b" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+                            <span className="absolute top-1.5 right-2.5 text-[9px] text-slate-400 z-10 leading-none">To</span>
+                            <span className="absolute bottom-1.5 left-2.5 text-[9px] text-slate-400 z-10 leading-none">From</span>
+                            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 100 100">
+                              <line x1="0" y1="0" x2="100" y2="100" stroke="#334155" strokeWidth="1" vectorEffect="non-scaling-stroke" />
                             </svg>
-                            <span className="absolute top-1 right-2 text-[10px] z-10">To</span>
-                            <span className="absolute bottom-1 left-2 text-[10px] z-10">From</span>
                           </th>
                           <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">A</th>
                           <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">B</th>
@@ -2274,31 +2274,50 @@ export default function App() {
                             </p>
                             <table className="table-fixed w-full text-center border-collapse border border-slate-800 mt-2 text-[10px]">
                               <thead>
-                                <tr className="bg-slate-900">
-                                  <th className="border border-slate-800 p-1 relative w-1/4 h-10">
-                                    <span className="absolute top-1 right-2 text-[9px] text-slate-400 z-10">To</span>
-                                    <span className="absolute bottom-1 left-2 text-[9px] text-slate-400 z-10">From</span>
-                                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                      <line x1="0" y1="0" x2="100" y2="100" stroke="#334155" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+                                <tr className="bg-slate-900 text-[9px]">
+                                  <th className="border border-slate-800 relative w-[20%] h-16 bg-slate-900/80">
+                                    <span className="absolute top-1.5 right-2 text-slate-400 z-10 leading-none">TO (後工程)</span>
+                                    <span className="absolute bottom-1.5 left-2 text-slate-400 z-10 leading-relaxed text-left">
+                                      FROM<br />(前工程)
+                                    </span>
+                                    <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                      <line x1="0" y1="0" x2="100" y2="100" stroke="#475569" strokeWidth="1" vectorEffect="non-scaling-stroke" />
                                     </svg>
                                   </th>
-                                  <th className="border border-slate-800 p-1 w-1/4">工程A</th>
-                                  <th className="border border-slate-800 p-1 w-1/4">工程B</th>
-                                  <th className="border border-slate-800 p-1 w-1/4">工程C</th>
+                                  <th className="border border-slate-800 p-1 w-[20%] font-bold text-slate-200">工程A</th>
+                                  <th className="border border-slate-800 p-1 w-[20%] font-bold text-slate-200">工程B</th>
+                                  <th className="border border-slate-800 p-1 w-[20%] font-bold text-slate-200">工程C</th>
+                                  <th className="border border-slate-800 p-1 w-[20%] font-bold text-slate-200">工程D</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td className="border border-slate-800 p-1 bg-slate-900 font-bold">工程A</td>
-                                  <td className="border border-slate-800 p-1 bg-slate-800/30">\</td>
-                                  <td className="border border-slate-800 p-1 text-green-400 font-bold">20 (順流)</td>
-                                  <td className="border border-slate-800 p-1 text-green-400 font-bold">5 (順流)</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-900 font-bold text-slate-300">工程A</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-800/30 text-slate-500">\</td>
+                                  <td className="border border-slate-800 p-2 text-green-400 font-bold">20 (順流)</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
                                 </tr>
                                 <tr>
-                                  <td className="border border-slate-800 p-1 bg-slate-900 font-bold">工程B</td>
-                                  <td className="border border-slate-800 p-1 text-red-400 font-bold">10 (逆流)</td>
-                                  <td className="border border-slate-800 p-1 bg-slate-800/30">\</td>
-                                  <td className="border border-slate-800 p-1 text-green-400 font-bold">35 (順流)</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-900 font-bold text-slate-300">工程B</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-800/30 text-slate-500">\</td>
+                                  <td className="border border-slate-800 p-2 text-green-400 font-bold">35 (順流)</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                </tr>
+                                <tr>
+                                  <td className="border border-slate-800 p-2 bg-slate-900 font-bold text-slate-300">工程C</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-800/30 text-slate-500">\</td>
+                                  <td className="border border-slate-800 p-2 text-green-400 font-bold">25 (順流)</td>
+                                </tr>
+                                <tr>
+                                  <td className="border border-slate-800 p-2 bg-slate-900 font-bold text-slate-300">工程D</td>
+                                  <td className="border border-slate-800 p-2 text-red-400 font-bold">10 (逆流)</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 text-slate-600">-</td>
+                                  <td className="border border-slate-800 p-2 bg-slate-800/30 text-slate-500">\</td>
                                 </tr>
                               </tbody>
                             </table>
