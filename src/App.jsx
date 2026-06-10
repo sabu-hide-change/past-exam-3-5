@@ -1943,22 +1943,22 @@ export default function App() {
                 {/* 問題5のフロムツーチャート */}
                 {q.hasTable && q.tableType === "from_to_chart" && (
                   <div className="w-full overflow-x-auto bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-                    <table className="w-full text-xs text-center border-collapse border border-slate-800">
+                    <table className="table-fixed w-full text-xs text-center border-collapse border border-slate-800">
                       <thead>
                         <tr className="bg-slate-950">
-                          <th className="border border-slate-800 p-2 font-bold text-slate-400 relative" style={{ width: "120px" }}>
+                          <th className="border border-slate-800 p-2 font-bold text-slate-400 relative w-[15%] h-12">
                             {/* 斜め線入りセル */}
                             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
-                              <line x1="0" y1="0" x2="100" y2="100" stroke="#1e293b" strokeWidth="1" />
+                              <line x1="0" y1="0" x2="100" y2="100" stroke="#1e293b" strokeWidth="1" vectorEffect="non-scaling-stroke" />
                             </svg>
-                            <span className="absolute top-1 right-2 text-[10px]">To</span>
-                            <span className="absolute bottom-1 left-2 text-[10px]">From</span>
+                            <span className="absolute top-1 right-2 text-[10px] z-10">To</span>
+                            <span className="absolute bottom-1 left-2 text-[10px] z-10">From</span>
                           </th>
-                          <th className="border border-slate-800 p-2 font-bold text-indigo-400">A</th>
-                          <th className="border border-slate-800 p-2 font-bold text-indigo-400">B</th>
-                          <th className="border border-slate-800 p-2 font-bold text-indigo-400">C</th>
-                          <th className="border border-slate-800 p-2 font-bold text-indigo-400">D</th>
-                          <th className="border border-slate-800 p-2 font-bold text-indigo-400">E</th>
+                          <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">A</th>
+                          <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">B</th>
+                          <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">C</th>
+                          <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">D</th>
+                          <th className="border border-slate-800 p-2 font-bold text-indigo-400 w-[17%]">E</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -2272,19 +2272,19 @@ export default function App() {
                               <strong className="text-slate-200">・流入流出図表（フロムツーチャート）：</strong><br />
                               機械の配置計画等に利用。対角線の「右上」が順送りの移動、「左下」が逆送りの移動（逆流）を示します。
                             </p>
-                            <table className="w-full text-center border-collapse border border-slate-800 mt-2 text-[10px]">
+                            <table className="table-fixed w-full text-center border-collapse border border-slate-800 mt-2 text-[10px]">
                               <thead>
                                 <tr className="bg-slate-900">
-                                  <th className="border border-slate-800 p-1 relative">
-                                    <span className="absolute top-0 right-1">To</span>
-                                    <span className="absolute bottom-0 left-1">From</span>
-                                    <svg className="w-full h-full min-h-[20px]" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                      <line x1="0" y1="0" x2="100" y2="100" stroke="#334155" />
+                                  <th className="border border-slate-800 p-1 relative w-1/4 h-10">
+                                    <span className="absolute top-1 right-2 text-[9px] text-slate-400 z-10">To</span>
+                                    <span className="absolute bottom-1 left-2 text-[9px] text-slate-400 z-10">From</span>
+                                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                      <line x1="0" y1="0" x2="100" y2="100" stroke="#334155" strokeWidth="1" vectorEffect="non-scaling-stroke" />
                                     </svg>
                                   </th>
-                                  <th className="border border-slate-800 p-1">工程A</th>
-                                  <th className="border border-slate-800 p-1">工程B</th>
-                                  <th className="border border-slate-800 p-1">工程C</th>
+                                  <th className="border border-slate-800 p-1 w-1/4">工程A</th>
+                                  <th className="border border-slate-800 p-1 w-1/4">工程B</th>
+                                  <th className="border border-slate-800 p-1 w-1/4">工程C</th>
                                 </tr>
                               </thead>
                               <tbody>
